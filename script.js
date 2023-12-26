@@ -4,10 +4,19 @@ function getComputerChoice(){
     return choices[randomIndex];
 }
 
+function getPlayerChoice(){
+    let playerSelection;
+    do {
+        playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):").toLowerCase();
+    } while (!['rock', 'paper', 'scissors'].includes(playerSelection));
+
+    return playerSelection;
+}
+
 //test the function
 //console.log("Computer's choice: " + getComputerChoice());
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+    // playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
@@ -28,7 +37,7 @@ function game() {
     let computerScore = 0;
 
     while (playerScore < 3 && computerScore < 3) {
-        const playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):");
+        const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
 
         const roundResult = playRound(playerSelection, computerSelection);

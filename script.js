@@ -41,7 +41,6 @@ function game() {
         const computerSelection = getComputerChoice();
 
         const roundResult = playRound(playerSelection, computerSelection);
-
         console.log(roundResult);
 
         if (roundResult.includes('win')) {
@@ -52,13 +51,13 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        console.log('You win the game! Final score: ' + playerScore + '-' + computerScore);
+        return 'You win the game! Final score: ' + playerScore + '-' + computerScore;
     } else if (playerScore < computerScore) {
-        console.log('You lose the game! Final score: ' + playerScore + '-' + computerScore);
+        return 'You lose the game! Final score: ' + playerScore + '-' + computerScore;
     } else {
-        console.log('It\'s a tie! Final score: ' + playerScore + '-' + computerScore);
+        return 'It\'s a tie! Final score: ' + playerScore + '-' + computerScore;
     }
 }
 
 // Test the game
-game();
+console.log(game());
